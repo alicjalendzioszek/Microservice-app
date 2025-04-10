@@ -1,0 +1,35 @@
+### Wypisujemy wszystkie zespoły
+GET http://localhost:7072/teams
+Accept: application/json
+
+### Szukamy zespołu po ID
+GET http://localhost:8082/teams/d0ea3d25-c9cd-4cbb-b446-3f88bbb68503
+Accept: application/json
+
+### Dodajemy nowy zespół
+POST http://localhost:8082/teams
+Content-Type: application/json
+
+{
+  "teamName": "teamName",
+  "coachName": "coachName",
+  "sponsorsName": "sponsorsName",
+  "league": "league",
+  "foundingYear": 1
+}
+
+### Aktualizujemy zespół
+PUT http://localhost:8082/teams/d0ea3d25-c9cd-4cbb-b446-3f88bbb68503
+Content-Type: application/json
+
+{
+  "teamName": "CHANGED NAME",
+  "coachName": "C",
+  "sponsorsName": "S",
+  "league": "L",
+  "foundingYear": 11
+}
+
+### Usuwamy zespół po ID
+DELETE http://localhost:8082/teams/ae091690-a89d-4335-9b33-75e935fde687
+Accept: application/json

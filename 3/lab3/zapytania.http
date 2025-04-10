@@ -1,0 +1,80 @@
+### Wypisujemy wszystkie zespoły
+GET http://localhost:8080/teams
+Accept: application/json
+
+### Szukamy zespołu po ID
+GET http://localhost:8080/teams/0f1ebe68-e5b1-4391-89d4-ac9d76ae8017
+Accept: application/json
+
+### Dodajemy nowy zespół
+POST http://localhost:8080/teams
+Content-Type: application/json
+
+{
+  "teamName": "teamName",
+  "coachName": "coachName",
+  "sponsorsName": "sponsorsName",
+  "league": "league",
+  "foundingYear": 1
+}
+
+### Aktualizujemy zespół
+PUT http://localhost:8080/teams/07c28199-a6a8-4047-b758-236ae8705513
+Content-Type: application/json
+
+{
+  "teamName": "CHANGED NAME",
+  "coachName": "C",
+  "sponsorsName": "S",
+  "league": "L",
+  "foundingYear": 11
+}
+
+### Usuwamy zespół po ID
+DELETE http://localhost:8080/teams/0f1ebe68-e5b1-4391-89d4-ac9d76ae8017
+Accept: application/json
+
+### Wypisujemy graczy wybranego zespołu
+GET http://localhost:8080/teams/07c28199-a6a8-4047-b758-236ae8705513/players
+
+
+
+
+### Wypisujemy wszystkich graczy
+GET http://localhost:8080/players
+Accept: application/json
+
+### Szukamy gracza po ID
+GET http://localhost:8080/players/dea92977-169c-4df7-b823-4684ecaf48de
+Accept: application/json
+
+### Dodajemy nowego gracza do zespołu
+POST http://localhost:8080/players/teams/72a101a6-ac75-4f29-a26c-f04d7e5ba0f9
+Content-Type: application/json
+
+{
+  "name": "New player",
+  "position": "LIBERO",
+  "number": 14,
+  "height": 189
+}
+
+### Aktualizujemy gracza
+PUT http://localhost:8080/players/3ac038aa-7576-47c3-b5c0-a47a6e7e8327
+Content-Type: application/json
+
+{
+  "name": "CHANGED NAME",
+  "position": "LIBERO",
+  "number": 1,
+  "height": 111
+}
+
+### Usuwamy gracza po ID
+DELETE http://localhost:8080/players/6a2fc116-e2a7-4f70-87cd-31ef5b1aaed5
+Accept: application/json
+
+
+
+
+

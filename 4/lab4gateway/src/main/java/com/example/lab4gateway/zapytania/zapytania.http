@@ -1,0 +1,83 @@
+### Wypisujemy wszystkie zespoły
+GET http://localhost:7082/teams
+Accept: application/json
+
+### Szukamy zespołu po ID
+GET http://localhost:8080/teams/c13e8b49-099c-41eb-8a14-f3475441209a
+Accept: application/json
+
+### Dodajemy nowy zespół
+POST http://localhost:8080/teams
+Content-Type: application/json
+
+{
+  "teamName": "teaff43443frecerme",
+  "coachName": "coachName",
+  "sponsorsName": "sponsorsName",
+  "league": "league",
+  "foundingYear": 1
+}
+
+### Aktualizujemy zespół
+PUT http://localhost:8080/teams/42df335d-25b7-4c3d-a5ba-e24727c7a553
+Content-Type: application/json
+
+{
+  "teamName": "CHANGED NAME",
+  "coachName": "C",
+  "sponsorsName": "S",
+  "league": "L",
+  "foundingYear": 11
+}
+
+### Usuwamy zespół po ID
+DELETE http://localhost:8080/teams/1966ce44-fef8-4744-bf45-25cd5133a654
+Accept: application/json
+
+### Wypisujemy graczy wybranego zespołu
+GET http://localhost:8080/players/teams/6fcba441-4690-435d-afda-48aa1e3e64cf/players
+
+
+
+
+
+
+
+### Wypisujemy wszystkich graczy
+GET http://localhost:8080/players
+Accept: application/json
+
+### Szukamy gracza po ID
+GET http://localhost:8080/players/47d06936-de75-425f-91f4-da67f8224b98
+Accept: application/json
+
+### Dodajemy nowego gracza do zespołu
+POST http://localhost:8080/players/teams/42df335d-25b7-4c3d-a5ba-e24727c7a553
+Content-Type: application/json
+
+{
+  "name": "N43343er",
+  "position": "LIBERO",
+  "number": 133,
+  "height": 183
+}
+
+### Aktualizujemy gracza
+PUT http://localhost:8080/players/33181b3f-8f01-485b-a6e3-44e9f18b15ce
+Content-Type: application/json
+
+{
+  "name": "CHANGED NAME",
+  "position": "LIBERO",
+  "number": 1,
+  "height": 111
+}
+
+### Usuwamy gracza po ID
+DELETE http://localhost:8080/players/33181b3f-8f01-485b-a6e3-44e9f18b15ce
+Accept: application/json
+
+
+
+
+
